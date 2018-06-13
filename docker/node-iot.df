@@ -1,0 +1,21 @@
+
+# iot server
+
+FROM node:9-stretch
+
+ENV LOGLEVEL debug
+ENV RABBITMQ amqp://roger:jessica@172.19.0.200
+ENV PORT 3000
+
+COPY app/iot-server/package.json .
+COPY app/iot-server/package-lock.json .
+COPY app/iot-server/server.js .
+RUN npm install && npm install -g forever
+
+RUN mkdir /logs
+VOLUME /logs
+
+RUN unlink /etc/localtime
+RUN ln -s /usr/share/zoneinfo/Europe/Athens /etc/localtime
+
+CMD ["npm", "run", "forever"]

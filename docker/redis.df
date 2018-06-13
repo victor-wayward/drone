@@ -1,0 +1,14 @@
+
+FROM redis:3.2
+
+VOLUME /data /var/log
+
+COPY conf/redis/redis.conf /etc/redis.conf
+
+RUN unlink /etc/localtime
+RUN ln -s /usr/share/zoneinfo/Europe/Athens /etc/localtime
+
+EXPOSE 6379
+
+CMD [ "redis-server", "/etc/redis.conf" ]
+

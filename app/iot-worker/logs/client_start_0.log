@@ -1,0 +1,36 @@
+
+info [Sun Jun 10 2018 21:26:00 GMT+0300 (EEST)]  ------------------------------
+info [Sun Jun 10 2018 21:26:00 GMT+0300 (EEST)]  START 0
+info [Sun Jun 10 2018 21:26:01 GMT+0300 (EEST)]  [AMQP-conn] connected
+info [Sun Jun 10 2018 21:26:01 GMT+0300 (EEST)]  [AMQP-chan] created
+info [Sun Jun 10 2018 21:26:01 GMT+0300 (EEST)]  [AMQP-que] worker started
+error [Sun Jun 10 2018 21:26:01 GMT+0300 (EEST)]  [AMQP-chan] ReferenceError: load is not defined
+info [Sun Jun 10 2018 21:26:01 GMT+0300 (EEST)]  [AMQP-chan] channel closed
+warn [Sun Jun 10 2018 21:26:03 GMT+0300 (EEST)]  SIGINT
+
+info [Sun Jun 10 2018 23:34:43 GMT+0300 (EEST)]  ------------------------------
+info [Sun Jun 10 2018 23:34:43 GMT+0300 (EEST)]  START 0
+info [Sun Jun 10 2018 23:34:43 GMT+0300 (EEST)]  [AMQP-conn] connected
+info [Sun Jun 10 2018 23:34:43 GMT+0300 (EEST)]  [AMQP-chan] created
+info [Sun Jun 10 2018 23:34:43 GMT+0300 (EEST)]  [AMQP-que] worker started
+error [Sun Jun 10 2018 23:34:43 GMT+0300 (EEST)]  [AMQP-chan] TypeError: load is not a function
+info [Sun Jun 10 2018 23:34:43 GMT+0300 (EEST)]  [AMQP-chan] channel closed
+warn [Sun Jun 10 2018 23:34:46 GMT+0300 (EEST)]  SIGINT
+
+info [Sun Jun 10 2018 23:36:30 GMT+0300 (EEST)]  ------------------------------
+info [Sun Jun 10 2018 23:36:30 GMT+0300 (EEST)]  START 0
+info [Sun Jun 10 2018 23:36:30 GMT+0300 (EEST)]  [AMQP-conn] connected
+info [Sun Jun 10 2018 23:36:30 GMT+0300 (EEST)]  [AMQP-chan] created
+info [Sun Jun 10 2018 23:36:30 GMT+0300 (EEST)]  [AMQP-que] worker started
+error [Sun Jun 10 2018 23:36:30 GMT+0300 (EEST)]  [AMQP-chan] TypeError: load is not a function
+info [Sun Jun 10 2018 23:36:30 GMT+0300 (EEST)]  [AMQP-chan] channel closed
+warn [Sun Jun 10 2018 23:36:33 GMT+0300 (EEST)]  SIGINT
+
+info [Mon Jun 11 2018 00:13:26 GMT+0300 (EEST)]  ------------------------------
+info [Mon Jun 11 2018 00:13:26 GMT+0300 (EEST)]  START 0
+info [Mon Jun 11 2018 00:13:27 GMT+0300 (EEST)]  [AMQP-conn] connected
+info [Mon Jun 11 2018 00:13:27 GMT+0300 (EEST)]  [AMQP-chan] created
+info [Mon Jun 11 2018 00:13:27 GMT+0300 (EEST)]  [AMQP-que] worker started
+error [Mon Jun 11 2018 00:13:27 GMT+0300 (EEST)]  [AMQP-chan] TypeError: load is not a function
+info [Mon Jun 11 2018 00:13:27 GMT+0300 (EEST)]  [AMQP-chan] channel closed
+warn [Mon Jun 11 2018 00:13:31 GMT+0300 (EEST)]  SIGINT
