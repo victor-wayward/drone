@@ -30,3 +30,4 @@
 46.146.221.73 - - [13/Jun/2018:12:02:49 +0300] "GET / HTTP/1.1" 403 571 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
 31.3.88.166 - - [13/Jun/2018:12:18:08 +0300] "GET / HTTP/1.1" 403 571 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"
 92.112.3.227 - - [13/Jun/2018:13:36:32 +0300] "GET / HTTP/1.1" 403 571 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
+217.29.210.231 - - [13/Jun/2018:15:17:59 +0300] "GET / HTTP/1.1" 403 169 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7"
