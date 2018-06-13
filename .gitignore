@@ -1,21 +1,13 @@
 
 app/iot-server/logs/*
-!app/iot-server/logs/.gitkeep
 app/iot-worker/logs/*
-!app/iot-worker/logs/.gitkeep
 
 redis/*
-!redis/.gitkeep
 
 logs/iot-server/*
-!logs/iot-server/.gitkeep
 logs/iot-worker/*
-!logs/iot-worker/.gitkeep
 logs/nginx/*
-!logs/nginx/.gitkeep
 logs/rabbitmq/*
-!logs/rabbitmq/.gitkeep
 logs/redis/*
-!logs/redis/.gitkeep
 
-
+!*.gitkeep
