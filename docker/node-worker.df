@@ -1,0 +1,22 @@
+
+# iot-worker 
+
+FROM node:9-stretch
+
+ENV LOGLEVEL debug
+ENV RABBITMQ amqp://roger:jessica@172.18.0.200
+ENV REDIS redis://:Astr0ng1@172.18.0.100/0
+
+COPY app/iot-worker/package.json .
+COPY app/iot-worker/package-lock.json .
+COPY app/iot-worker/worker.js .
+COPY app/iot-worker/load.js .
+RUN npm install && npm install -g forever
+
+RUN mkdir /logs
+VOLUME /logs
+
+RUN unlink /etc/localtime
+RUN ln -s /usr/share/zoneinfo/Europe/Athens /etc/localtime
+
+CMD ["npm", "run", "forever"]

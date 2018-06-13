@@ -33,10 +33,9 @@ then
                -v $PWD/www:/usr/share/nginx/html:ro \
                -v $PWD/logs/nginx:/var/log/nginx:rw \
                -d nginx:d
-    docker logs dnginx
 fi
 
-# iot server - node.js
+# iot server, node.js
 if [ "$1" = iot ];
 then	
     docker stop iotnode
@@ -48,7 +47,6 @@ then
 	       --ip 172.19.0.20 -p 127.0.0.1:3001:3000 \
                -v $PWD/logs/iot-server:/logs:rw \
                -d node:iot
-    docker logs iotnode 
 fi
 
 # rabbitmq server 
@@ -63,8 +61,6 @@ then
                -v $PWD/logs/rabbitmq:/var/log/rabbitmq:rw \
                -d rabbitmq:3
     docker exec -ti drabbit /bin/bash -c "rabbitmq-plugins enable rabbitmq_management"
-    docker ps -a
-    docker logs drabbit 
 fi
 
 # redis server 
@@ -81,13 +77,12 @@ then
                -v $PWD/logs/redis:/var/log:rw \
                -d redis:d
     docker ps -a
-    docker logs dredis
 fi
 
 
 
-# worker - node.js
-if [ "$1" = work ];
+# iot worker, node.js
+if [ "$1" = worker ];
 then	
     docker stop worker0
     docker rm worker0

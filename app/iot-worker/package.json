@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node worker.js",
+    "lint": "eslint worker.js load.js",
     "forever": "forever --minUptime 5000 --spinSleepTime 5000 -a -l logs/forever.log -o logs/forever.log -e logs/forever.log worker.js"
   },
   "author": "",
