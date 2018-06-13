@@ -1,4 +1,8 @@
 
+// iot-server accepts iot messages as POST requests
+// and delivers them to rabbitmq 'iot' queue
+// it is proxied by nginx on port 80 
+
 // read env
 const loglevel = process.env.LOGLEVEL || 'info';
 const port = process.env.PORT || 3000;
@@ -45,7 +49,7 @@ amqp.connect(rabbitConnStr + "?heartbeat=60", function(err, con) {
 		});
 		log.info("[AMQP-chan] created");
 
-		// handle server data
+		// handle incoming iot messages 
 		server.on('request', function (req, res) {
 			if (req.method === "POST") {
 				let body = [];

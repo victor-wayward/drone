@@ -4,14 +4,18 @@ if [ -z "$1" ]
 then
     docker ps -a
     echo
-    echo "-- nginx 	[nginx on 80, 8080]"
-    echo "-- wsnode	[web socket server on 3000 - socket.io]"
-    echo "-- erabbit	[rabbitmq server on 5672 - management on 15672]"
+    echo "options: "
+    echo "network 	[create lan 172.19.0.0/24]"
+    echo "nginx 	[nginx on 80, 8080]"
+    echo "iot 		[iot server on 80]"
+    echo "rabbit	[rabbitmq server on 5672 - management on 8081]"
+    echo "worker	[iot worker]"
 fi
 
 # network
-if [ "$1" = dnet ];
+if [ "$1" = network ];
 then
+     docker network rm dnet
      docker network create --gateway 172.19.0.1 --subnet 172.19.0.0/24 dnet
      docker inspect dnet
 fi
@@ -85,44 +89,26 @@ fi
 # worker - node.js
 if [ "$1" = work ];
 then	
-    docker stop workstart0
-    docker rm workstart0
-    docker stop workclick0
-    docker rm workclick0
-    docker rmi node:work
-    docker build -t="node:work" --file docker/node-work.df . 
+    docker stop worker0
+    docker rm worker0
+    docker stop worker1
+    docker rm worker1
+    docker rmi node:worker
+    docker build -t="node:worker" --file docker/node-worker.df . 
 
-    docker run --name workstart0 \
-               --network enet \
+    docker run --name worker0 \
+               --network dnet \
 	       --ip 172.19.0.50 \
-	       -e "TYPE=start" \
 	       -e "WORKERID=0" \
-               -v $PWD/logs/emb-worker:/logs:rw \
-               -d node:work
+               -v $PWD/logs/iot-worker:/logs:rw \
+               -d node:worker
 
-    docker run --name workstart1 \
-               --network enet \
+    docker run --name worker1 \
+               --network dnet \
 	       --ip 172.19.0.51 \
-	       -e "TYPE=start" \
 	       -e "WORKERID=1" \
-               -v $PWD/logs/emb-worker:/logs:rw \
-               -d node:work
-    
-    docker run --name workclick0 \
-               --network enet \
-	       --ip 172.19.0.71 \
-	       -e "TYPE=click" \
-	       -e "WORKERID=0" \
-               -v $PWD/logs/emb-worker:/logs:rw \
-               -d node:work
-
-    docker run --name workclick1 \
-               --network enet \
-	       --ip 172.19.0.72 \
-	       -e "TYPE=click" \
-	       -e "WORKERID=1" \
-               -v $PWD/logs/emb-worker:/logs:rw \
-               -d node:work
+               -v $PWD/logs/iot-worker:/logs:rw \
+               -d node:worker
 fi
 
 

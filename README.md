@@ -18,7 +18,7 @@ nginx -> iot-server -> rabbitmq -> iot-worker -> redis <- api-server
 - nginx: web server acting as proxy on ports 80 and 8080, on port 80 listens the api-server, on port 8080 listens the iot-server
 - iot-server: accepts IoT messages and forwards to rabbitmq, node.js
 - rabbitmq: buffers messages
-- iot-worker: processes messages from rabbitMQ and loads redis db - 2 instances, node.js
+- iot-worker: processes messages from rabbitmq and loads redis db - 2 instances, node.js
 - redis: redis db
 - api-server: provides the reporting endpoints, node.js
 	
