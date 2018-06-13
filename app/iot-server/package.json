@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "lint": "eslint server.js",
     "forever": "forever --minUptime 5000 --spinSleepTime 5000 -a -l logs/forever.log -o logs/forever.log -e logs/forever.log server.js"
   },
   "author": "",
@@ -13,5 +14,6 @@
   "dependencies": {
     "amqplib": "^0.5.2",
     "logger": "0.0.1"
-  }
+  },
+  "devDependencies": {}
 }
