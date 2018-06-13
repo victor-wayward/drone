@@ -3,12 +3,12 @@
 
 ### Directory Structure
 
-- app		node.js application files	
-- conf		configuration files
-- docker	docker files
-- logs		platform logs
-- redis		redis data store
-- www		web root 
+- app    node.js application files	
+- conf    configuration files
+- docker    docker files
+- logs    platform logs
+- redis	   redis data store
+- www    web root 
 
 run.sh 		script to start the platform (docker commands)
 
