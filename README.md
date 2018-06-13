@@ -3,13 +3,13 @@
 
 ### Directory Structure
 
-app: node.js application files<br/>	
-conf: configuration files<br/>
-docker: docker files<br/>
-logs: platform logs<br/>
-redis: redis data store<br/>
-www: web root<br/> 
-run.sh: script to start the platform (docker commands)<br/>
+- app: node.js application files	
+- conf: configuration files
+- docker: docker files
+- logs: platform logs
+- redis: redis data store
+- www: web root 
+- run.sh: script to start the platform (docker commands)
 
 ### Project Components
 
