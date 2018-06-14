@@ -9,7 +9,7 @@
 - logs: platform logs
 - redis: redis data store
 - www: web root 
-- run.sh: script to start the platform (docker commands)
+- run: script to start the platform (docker commands)
 
 ### Prerequisites
 
