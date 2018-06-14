@@ -3,6 +3,8 @@ app/iot-server/node_modules/*
 app/iot-server/logs/*
 app/iot-worker/node_modules/*
 app/iot-worker/logs/*
+app/api-server/node_modules/*
+app/api-server/logs/*
 
 redis/*
 
