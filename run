@@ -12,6 +12,8 @@ then
     echo -e "./run redis\t\t[redis server on 6379]"
     echo -e "./run api\t\t[api server on 80]"
     echo
+    echo -e "./run all\t\t[runs all the tasks above]"
+    echo
 fi
 
 # all

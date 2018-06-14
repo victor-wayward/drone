@@ -11,6 +11,14 @@
 - www: web root 
 - run.sh: script to start the platform (docker commands)
 
+### Prerequisites
+
+- docker (project build with Docker version 18.03.1-ce, build 9ee9f40)
+- lan 172.19.0.0/24 should be available on host system 
+- redis-tools (optionally, to access Redis, use 'apt-get install redis-tools' on debian variants)
+
+Please note that the platform has been tested only on a Debian 9 host.
+
 ### Project Components
 
 nginx -> iot-server -> rabbitmq -> iot-worker -> redis <- api-server
@@ -30,3 +38,12 @@ In total, seven docker containers are utilized.
 - redis: 172.19.0.100 port 127.0.0.1:6379:6379
 - worker-0: 172.19.0.50
 - worker-1: 172.19.0.51
+
+### Run
+
+Either unpack the provided zip file to a clean directory or clone:
+https://github.com/victor-wayward/drone.git
+
+
+
+
