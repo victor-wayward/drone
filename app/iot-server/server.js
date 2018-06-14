@@ -60,7 +60,7 @@ amqp.connect(rabbitConnStr + '?heartbeat=60', function(err, con) {
 					let now = Math.round((new Date()).getTime() / 1000);
 					let msg = Buffer.concat(body).toString();		
 					ch.assertQueue('iot', { durable: true });			
-					ch.sendToQueue('start', Buffer.from(now + '&' + msg), { persistent: true }); 
+					ch.sendToQueue('iot', Buffer.from(now + '&' + msg), { persistent: true }); 
 					log.debug(msg);
 					res.write('ok');
 					res.end();

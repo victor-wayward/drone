@@ -76,7 +76,6 @@ then
                -v $PWD/redis:/redis:rw \
                -v $PWD/logs/redis:/var/log:rw \
                -d redis:d
-    docker ps -a
 fi
 
 

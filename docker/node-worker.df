@@ -4,8 +4,8 @@
 FROM node:9-stretch
 
 ENV LOGLEVEL debug
-ENV RABBITMQ amqp://roger:jessica@172.18.0.200
-ENV REDIS redis://:Astr0ng1@172.18.0.100/0
+ENV RABBITMQ amqp://roger:jessica@172.19.0.200
+ENV REDIS redis://:astr0ng1@172.19.0.100/0
 
 COPY app/iot-worker/package.json .
 COPY app/iot-worker/package-lock.json .
