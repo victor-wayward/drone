@@ -85,6 +85,6 @@ OK
 # curl --data "45&37.944417&23.712706" http://host:8080
 ```
 - Check "ok" received, check iot-server logs, check iot-worker logs, check Redis contents
-- Use you browser to query a drone (http://host/iot/717)
+- Use your browser to query a drone (http://host/iot/717)
 - Issue 10 times the same location update command to emulate a standing drone. Issue (http://host/standing) 
 - Update the location for a standing drone and issue again (http://host/standing).
