@@ -106,4 +106,18 @@ then
 fi
 
 
+# api server, node.js
+if [ "$1" = api ];
+then	
+    docker stop apinode
+    docker rm apinode 
+    docker rmi node:api
+    docker build -t="node:api" --file docker/node-api.df . 
+    docker run --name apinode \
+               --network dnet \
+	       --ip 172.19.0.30 -p 127.0.0.1:3002:3000 \
+               -v $PWD/logs/api-server:/logs:rw \
+               -d node:api
+fi
+
 

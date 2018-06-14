@@ -1,0 +1,23 @@
+
+# iot server
+
+FROM node:9-stretch
+
+ENV LOGLEVEL debug
+ENV PORT 3000
+ENV REDIS redis://:astr0ng1@172.19.0.100/0
+
+COPY app/api-server/package.json .
+COPY app/api-server/package-lock.json .
+COPY app/api-server/server.js .
+COPY app/api-server/get.js .
+
+RUN npm install && npm install -g forever
+
+RUN mkdir /logs
+VOLUME /logs
+
+RUN unlink /etc/localtime
+RUN ln -s /usr/share/zoneinfo/Europe/Athens /etc/localtime
+
+CMD ["npm", "run", "forever"]
