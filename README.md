@@ -43,11 +43,8 @@ In total, seven docker containers are utilized.
 ### Run
 
 - Either unpack the provided file to a clean directory or clone (https://github.com/victor-wayward/drone.git).
-
 - The script responsible for creating or restarting containers is 'run'. Execute it to see the various steps involved.
-
 - Issue './run all' to bring the platform up. 
-
 - Check network connections
 ```
 # netstat -tulpn | grep docker
@@ -72,22 +69,15 @@ fb90c3e8ef2a        node:api            "npm run forever"        2 minutes ago  
 5ffa6cdef244        nginx:d             "nginx"                  4 minutes ago       Up 4 minutes        0.0.0.0:80->80/tcp, 0.0.0.0:8080->8080/tcp                                         dnginx
 ```
 - Check all logs under logs folder.
-
 - Check with your browser RabbitMQ server, http://<host>:8081 [roger/jessica]
-
 - Connect to Redis with 'redis-cli -h 172.19.0.100', issue 'auth astr0ng1', issue 'keys *' to see contents.
-
-- Use curl to set a drones location with a POST request (droneID&latitude&longitude)
+- Use curl to set a drone's location with a POST request (droneID&latitude&longitude)
 ```
 # curl --data "717&37.931932&23.700804" http://<host>:8080
 # curl --data "45&37.944417&23.712706" http://<host>:8080
+# curl --data "45&37.944417&23.712706" http://<host>:8080
 ```
 - Check "ok" received, check iot-server logs, check iot-worker logs, check Redis contents
-
 - Use you browser to query a drone (http://<host>/iot/717)
-
 - Issue 10 times the same location update command to emulate a standing drone. Issue (http://<host>/standing) 
-
 - Update the location for a standing drone and issue again (http://<host>/standing).
-
-
