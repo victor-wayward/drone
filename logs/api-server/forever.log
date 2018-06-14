@@ -1,2 +1,5 @@
 (node:27) [DEP0025] DeprecationWarning: sys is deprecated. Use util instead.
 (node:25) [DEP0025] DeprecationWarning: sys is deprecated. Use util instead.
+[ioredis] Unhandled error event: Error: connect ECONNREFUSED 172.19.0.100:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1174:14)
+(node:25) [DEP0025] DeprecationWarning: sys is deprecated. Use util instead.

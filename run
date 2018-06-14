@@ -2,15 +2,29 @@
 
 if [ -z "$1" ]
 then
-    docker ps -a
     echo
-    echo "options: "
-    echo "network 	[create lan 172.19.0.0/24]"
-    echo "nginx 	[nginx on 80, 8080]"
-    echo "iot 		[iot server on 80]"
-    echo "rabbit	[rabbitmq server on 5672 - management on 8081]"
-    echo "worker	[iot worker]"
+    echo "use: "
+    echo -e "./run network\t\t[create lan 172.19.0.0/24]"
+    echo -e "./run nginx\t\t[nginx on 80, 8080]"
+    echo -e "./run iot\t\t[iot server on 8080]"
+    echo -e "./run rabbit\t\t[rabbitmq server on 5672 - management on 8081]"
+    echo -e "./run worker\t\t[iot workers, two of them]"
+    echo -e "./run redis\t\t[redis server on 6379]"
+    echo -e "./run api\t\t[api server on 80]"
+    echo
 fi
+
+# all
+if [ "$1" = all ];
+then
+    ./run network
+    ./run nginx
+    ./run iot
+    ./run rabbit
+    ./run worker
+    ./run redis
+    ./run api
+fi	
 
 # network
 if [ "$1" = network ];
