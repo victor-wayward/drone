@@ -72,9 +72,11 @@ fb90c3e8ef2a        node:api            "npm run forever"        2 minutes ago  
 - Check with your browser RabbitMQ server, http://host:8081 [roger/jessica]
 - Connect to Redis
 ```
-redis-cli -h 172.19.0.100
-'auth astr0ng1'
-'keys *'
+# redis-cli -h 172.19.0.100
+172.19.0.100:6379> auth astr0ng1
+OK
+172.19.0.100:6379> keys *
+(empty list or set)
 ```
 - Use curl to set a drone's location with a POST request (droneID&latitude&longitude)
 ```
