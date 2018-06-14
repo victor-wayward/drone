@@ -49,7 +49,7 @@ In total, seven docker containers are utilized.
 - Issue './run all' to bring the platform up. 
 
 - Check network connections
-
+```
 # netstat -tulpn | grep docker
 tcp        0      0 127.0.0.1:3001          0.0.0.0:*               LISTEN      24158/docker-proxy
 tcp        0      0 127.0.0.1:3002          0.0.0.0:*               LISTEN      26850/docker-proxy
@@ -58,9 +58,9 @@ tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      
 tcp6       0      0 :::80                   :::*                    LISTEN      23481/docker-proxy
 tcp6       0      0 :::8080                 :::*                    LISTEN      23469/docker-proxy
 tcp6       0      0 :::8081                 :::*                    LISTEN      24375/docker-proxy
-
+```
 - Check all containers are running
-
+```
 # docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
 fb90c3e8ef2a        node:api            "npm run forever"        2 minutes ago       Up 2 minutes        127.0.0.1:3002->3000/tcp                                                           apinode
@@ -70,7 +70,7 @@ fb90c3e8ef2a        node:api            "npm run forever"        2 minutes ago  
 2ba9f3d7c9ae        rabbitmq:3          "docker-entrypoint.s…"   3 minutes ago       Up 3 minutes        4369/tcp, 5671/tcp, 25672/tcp, 127.0.0.1:5672->5672/tcp, 0.0.0.0:8081->15672/tcp   drabbit
 8ddf469e97e4        node:iot            "npm run forever"        3 minutes ago       Up 3 minutes        127.0.0.1:3001->3000/tcp                                                           iotnode
 5ffa6cdef244        nginx:d             "nginx"                  4 minutes ago       Up 4 minutes        0.0.0.0:80->80/tcp, 0.0.0.0:8080->8080/tcp                                         dnginx
-
+```
 - Check all logs under logs folder.
 
 - Check with your browser RabbitMQ server, http://<host>:8081 [roger/jessica]
@@ -78,9 +78,10 @@ fb90c3e8ef2a        node:api            "npm run forever"        2 minutes ago  
 - Connect to Redis with 'redis-cli -h 172.19.0.100', issue 'auth astr0ng1', issue 'keys *' to see contents.
 
 - Use curl to set a drones location with a POST request (droneID&latitude&longitude)
+```
 # curl --data "717&37.931932&23.700804" http://<host>:8080
 # curl --data "45&37.944417&23.712706" http://<host>:8080
-
+```
 - Check "ok" received, check iot-server logs, check iot-worker logs, check Redis contents
 
 - Use you browser to query a drone (http://<host>/iot/717)
