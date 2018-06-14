@@ -39,6 +39,7 @@ In total, seven docker containers are utilized.
 - redis: 172.19.0.100 port 127.0.0.1:6379:6379
 - worker-0: 172.19.0.50
 - worker-1: 172.19.0.51
+- api-server: 172.19.0.30 port 127.0.0.1:3002:3000
 
 ### Run
 
